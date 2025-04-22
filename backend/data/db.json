@@ -1,0 +1,28 @@
+{
+  "tours": [
+    {
+      "id": "1",
+      "title": "Exploring Italian Treasures",
+      "description": "Experience the best of Italy's culture, cuisine, and history",
+      "duration": 10,
+      "price": 3299,
+      "destination": "Italy",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival in Rome",
+          "description": "Welcome dinner and evening walk through historic Rome",
+          "highlights": ["Trevi Fountain", "Spanish Steps"]
+        },
+        {
+          "day": 2,
+          "title": "Vatican and Roman History",
+          "description": "Guided tour of Vatican Museums and Colosseum",
+          "highlights": ["Sistine Chapel", "Roman Forum"]
+        }
+      ],
+      "created_at": "2024-04-22T10:00:00Z",
+      "updated_at": "2024-04-22T10:00:00Z"
+    }
+  ]
+}
