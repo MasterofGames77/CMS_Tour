@@ -3,12 +3,14 @@
 import { useState, useEffect, FormEvent } from "react";
 import { Tour, toursApi } from "@/lib/api/tours";
 
+// Props interface defining the expected properties for the TourForm component
 interface TourFormProps {
-  initialData?: Tour; // undefined for “New”
-  onSuccess: (tour: Tour) => void; // callback after save
+  initialData?: Tour; // Optional initial tour data for editing mode
+  onSuccess: (tour: Tour) => void; // Callback function after successful form submission
 }
 
 export default function TourForm({ initialData, onSuccess }: TourFormProps) {
+  // State management for form fields and UI feedback
   const [title, setTitle] = useState(initialData?.title || "");
   const [description, setDescription] = useState(
     initialData?.description || ""
@@ -21,11 +23,13 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Form submission handler - creates or updates a tour
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
+    // Prepare the tour data for submission
     const payload = {
       title,
       description,
@@ -37,6 +41,7 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
 
     try {
       let result: Tour;
+      // Determine whether to create a new tour or update an existing one
       if (initialData) {
         result = await toursApi.updateTour(initialData.id, payload);
       } else {
@@ -44,7 +49,7 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
           payload as Omit<Tour, "id" | "created_at" | "updated_at">
         );
       }
-      onSuccess(result);
+      onSuccess(result); // Call success callback with the result
     } catch (err: any) {
       console.error("Submission failed:", err);
       setError("Failed to save tour. Please try again.");
@@ -58,12 +63,15 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
       onSubmit={handleSubmit}
       className="max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md space-y-4"
     >
+      {/* Form header showing current mode (Create/Edit) */}
       <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
         {initialData ? "Edit Tour" : "Create New Tour"}
       </h2>
 
+      {/* Error message display */}
       {error && <p className="text-red-500">{error}</p>}
 
+      {/* Title input field */}
       <div>
         <label className="block font-medium text-gray-700 dark:text-gray-200">
           Title
@@ -77,6 +85,7 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
         />
       </div>
 
+      {/* Description textarea field */}
       <div>
         <label className="block font-medium text-gray-700 dark:text-gray-200">
           Description
@@ -90,7 +99,9 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
         />
       </div>
 
+      {/* Grid layout for duration and price fields */}
       <div className="grid grid-cols-2 gap-4">
+        {/* Duration input field */}
         <div>
           <label className="block font-medium text-gray-700 dark:text-gray-200">
             Duration (days)
@@ -105,6 +116,7 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
           />
         </div>
 
+        {/* Price input field */}
         <div>
           <label className="block font-medium text-gray-700 dark:text-gray-200">
             Price (USD)
@@ -120,6 +132,7 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
         </div>
       </div>
 
+      {/* Destination input field */}
       <div>
         <label className="block font-medium text-gray-700 dark:text-gray-200">
           Destination
@@ -133,6 +146,7 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
         />
       </div>
 
+      {/* Submit button with loading state */}
       <button
         type="submit"
         disabled={loading}
