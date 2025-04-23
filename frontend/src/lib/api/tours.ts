@@ -1,21 +1,6 @@
-const API_BASE_URL = 'http://localhost:4000/api';
+import { Tour } from "@/types";
 
-export interface Tour {
-  id: string;
-  title: string;
-  description: string;
-  duration: number;
-  price: number;
-  destination: string;
-  itinerary: {
-    day: number;
-    title: string;
-    description: string;
-    highlights: string[];
-  }[];
-  created_at: string;
-  updated_at: string;
-}
+const API_BASE_URL = 'http://localhost:4000/api';
 
 export const toursApi = {
   // Get all tours

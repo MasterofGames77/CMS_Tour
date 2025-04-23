@@ -1,14 +1,9 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Tour, toursApi } from "@/lib/api/tours";
+import { Tour, TourFormProps } from "@/types";
+import { toursApi } from "@/lib/api/tours";
 import MarkdownEditor from "./MarkdownEditor";
-
-// Props interface defining the expected properties for the TourForm component
-interface TourFormProps {
-  initialData?: Tour; // Optional initial tour data for editing mode
-  onSuccess: (tour: Tour) => void; // Callback function after successful form submission
-}
 
 export default function TourForm({ initialData, onSuccess }: TourFormProps) {
   // State management for form fields and UI feedback

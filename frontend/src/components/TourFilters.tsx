@@ -1,12 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Tour } from "@/lib/api/tours";
-
-interface TourFiltersProps {
-  tours: Tour[];
-  onFilterChange: (filteredTours: Tour[]) => void;
-}
+import { TourFiltersProps } from "@/types";
 
 export default function TourFilters({
   tours,

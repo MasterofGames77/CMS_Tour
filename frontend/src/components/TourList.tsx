@@ -1,31 +1,26 @@
 "use client";
 
-import { Tour, toursApi } from "@/lib/api/tours";
+import { Tour, TourListProps } from "@/types";
+import { toursApi } from "@/lib/api/tours";
 import { useState } from "react";
 import TourForm from "./TourForm";
 
-// Props interface defining the expected properties for the TourList component
-interface TourListProps {
-  tours: Tour[]; // Array of tour objects to display
-  onTourUpdated: () => void; // Callback function to refresh the tour list
-}
-
 export default function TourList({ tours, onTourUpdated }: TourListProps) {
   // State for managing the tour being edited and form visibility
-  const [editingTour, setEditingTour] = useState<Tour | null>(null);
-  const [showForm, setShowForm] = useState(false);
+  const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
+  const [isEditing, setIsEditing] = useState(false);
 
   // Handler for editing a tour - sets the tour to edit and shows the form
   const handleEdit = (tour: Tour) => {
-    setEditingTour(tour);
-    setShowForm(true);
+    setSelectedTour(tour);
+    setIsEditing(true);
   };
 
   // Handler for deleting a tour - confirms with user and calls the API
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (tourId: string) => {
     if (window.confirm("Are you sure you want to delete this tour?")) {
       try {
-        await toursApi.deleteTour(id);
+        await toursApi.deleteTour(tourId);
         onTourUpdated(); // Refresh the tour list after deletion
       } catch (error) {
         console.error("Failed to delete tour:", error);
@@ -35,11 +30,17 @@ export default function TourList({ tours, onTourUpdated }: TourListProps) {
   };
 
   // Handler for successful form submission - hides form and refreshes list
-  const handleFormSuccess = () => {
-    setShowForm(false);
-    setEditingTour(null);
+  const handleEditSuccess = () => {
+    setSelectedTour(null);
+    setIsEditing(false);
     onTourUpdated();
   };
+
+  if (isEditing && selectedTour) {
+    return (
+      <TourForm initialData={selectedTour} onSuccess={handleEditSuccess} />
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -50,22 +51,14 @@ export default function TourList({ tours, onTourUpdated }: TourListProps) {
         </h2>
         <button
           onClick={() => {
-            setEditingTour(null);
-            setShowForm(true);
+            setSelectedTour(null);
+            setIsEditing(true);
           }}
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
         >
           Create New Tour
         </button>
       </div>
-
-      {/* Tour form component - shown when creating or editing a tour */}
-      {showForm && (
-        <TourForm
-          initialData={editingTour || undefined}
-          onSuccess={handleFormSuccess}
-        />
-      )}
 
       {/* Tours table displaying all tour information */}
       <div className="overflow-x-auto">

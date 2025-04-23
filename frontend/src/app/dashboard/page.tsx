@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Tour, toursApi } from "@/lib/api/tours";
+import { Tour } from "@/types";
+import { toursApi } from "@/lib/api/tours";
 import Link from "next/link";
 import TourFilters from "@/components/TourFilters";
 import ChatWidget from "@/components/ChatWidget";

@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Tour, toursApi } from "@/lib/api/tours";
+import { Tour } from "@/types";
+import { toursApi } from "@/lib/api/tours";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import { ItineraryDay } from "@/types";
 
 export default function TourDetail() {
   const { id } = useParams();
@@ -101,7 +103,7 @@ export default function TourDetail() {
               Itinerary
             </h2>
             <div className="space-y-6">
-              {tour.itinerary.map((day) => (
+              {tour.itinerary.map((day: ItineraryDay) => (
                 <div
                   key={day.day}
                   className="border-b border-gray-200 dark:border-gray-700 pb-4"
@@ -117,9 +119,11 @@ export default function TourDetail() {
                       Highlights:
                     </h4>
                     <ul className="list-disc list-inside text-gray-600 dark:text-gray-300">
-                      {day.highlights.map((highlight, index) => (
-                        <li key={index}>{highlight}</li>
-                      ))}
+                      {day.highlights.map(
+                        (highlight: string, index: number) => (
+                          <li key={index}>{highlight}</li>
+                        )
+                      )}
                     </ul>
                   </div>
                 </div>

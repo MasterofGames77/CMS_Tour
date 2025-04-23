@@ -2,13 +2,7 @@
 
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
-
-interface MarkdownEditorProps {
-  value: string;
-  onChange: (value: string) => void;
-  label: string;
-  required?: boolean;
-}
+import { MarkdownEditorProps } from "@/types";
 
 export default function MarkdownEditor({
   value,
