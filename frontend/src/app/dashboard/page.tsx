@@ -2,10 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { Tour, toursApi } from "@/lib/api/tours";
+import Link from "next/link";
+import TourFilters from "@/components/TourFilters";
+import ChatWidget from "@/components/ChatWidget";
 
 export default function Dashboard() {
   // State management for tours, loading state, and error handling
   const [tours, setTours] = useState<Tour[]>([]);
+  const [filteredTours, setFilteredTours] = useState<Tour[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -15,6 +19,7 @@ export default function Dashboard() {
       try {
         const data = await toursApi.getAllTours();
         setTours(data);
+        setFilteredTours(data);
         setError(null);
       } catch (err) {
         setError("Failed to fetch tours");
@@ -50,39 +55,48 @@ export default function Dashboard() {
     <div className="container mx-auto px-4 py-8">
       {/* Dashboard header */}
       <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-        Tour Dashboard
+        Collette Tour Dashboard
       </h1>
+
+      {/* Tour filters */}
+      <TourFilters tours={tours} onFilterChange={setFilteredTours} />
 
       {/* Responsive grid layout for tour cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Map through tours to create individual tour cards */}
-        {tours.map((tour) => (
-          <div
+        {/* Map through filtered tours to create individual tour cards */}
+        {filteredTours.map((tour) => (
+          <Link
             key={tour.id}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-colors duration-200"
+            href={`/tours/${tour.id}`}
+            className="block transition-transform duration-200 hover:scale-105"
           >
-            <div className="p-6">
-              {/* Tour title */}
-              <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
-                {tour.title}
-              </h2>
-              {/* Tour description */}
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {tour.description}
-              </p>
-              {/* Tour duration and price */}
-              <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
-                <span>{tour.duration} days</span>
-                <span>${tour.price}</span>
-              </div>
-              {/* Tour destination */}
-              <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                Destination: {tour.destination}
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden h-full">
+              <div className="p-6">
+                {/* Tour title */}
+                <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
+                  {tour.title}
+                </h2>
+                {/* Tour description */}
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {tour.description}
+                </p>
+                {/* Tour duration and price */}
+                <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+                  <span>{tour.duration} days</span>
+                  <span>${tour.price}</span>
+                </div>
+                {/* Tour destination */}
+                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                  Destination: {tour.destination}
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
+
+      {/* Chat Widget */}
+      <ChatWidget />
     </div>
   );
 }

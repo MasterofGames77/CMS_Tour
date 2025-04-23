@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { Tour, toursApi } from "@/lib/api/tours";
+import MarkdownEditor from "./MarkdownEditor";
 
 // Props interface defining the expected properties for the TourForm component
 interface TourFormProps {
@@ -36,7 +37,7 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
       duration,
       price,
       destination,
-      itinerary: [],
+      itinerary: initialData?.itinerary || [],
     };
 
     try {
@@ -50,9 +51,13 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
         );
       }
       onSuccess(result); // Call success callback with the result
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Submission failed:", err);
-      setError("Failed to save tour. Please try again.");
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : "Failed to save tour. Please try again.";
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -85,19 +90,13 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
         />
       </div>
 
-      {/* Description textarea field */}
-      <div>
-        <label className="block font-medium text-gray-700 dark:text-gray-200">
-          Description
-        </label>
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="w-full border px-3 py-2 rounded dark:bg-gray-700 dark:text-white"
-          rows={4}
-          required
-        />
-      </div>
+      {/* Description field with markdown support */}
+      <MarkdownEditor
+        label="Description"
+        value={description}
+        onChange={setDescription}
+        required
+      />
 
       {/* Grid layout for duration and price fields */}
       <div className="grid grid-cols-2 gap-4">

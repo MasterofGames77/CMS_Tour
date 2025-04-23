@@ -119,6 +119,182 @@
       ],
       "created_at": "2024-04-22T14:00:00Z",
       "updated_at": "2024-04-22T14:00:00Z"
+    },
+    {
+      "id": "6",
+      "title": "French Riviera & Provence",
+      "description": "Experience the charm of southern France, from lavender fields to coastal towns",
+      "duration": 8,
+      "price": 3899.99,
+      "destination": "France",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Nice Welcome",
+          "description": "Arrive in Nice and enjoy a welcome dinner in the Old Town",
+          "highlights": ["Nice Old Town", "Mediterranean Dinner"]
+        },
+        {
+          "day": 2,
+          "title": "Provence Exploration",
+          "description": "Visit the picturesque villages of Provence and lavender fields",
+          "highlights": ["Lavender Fields", "Village Markets", "Wine Tasting"]
+        }
+      ],
+      "created_at": "2024-04-22T15:00:00Z",
+      "updated_at": "2024-04-22T15:00:00Z"
+    },
+    {
+      "id": "7",
+      "title": "British Heritage Journey",
+      "description": "Discover the rich history and traditions of the United Kingdom",
+      "duration": 10,
+      "price": 4199.99,
+      "destination": "United Kingdom",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "London Landmarks",
+          "description": "Explore iconic London sites and enjoy afternoon tea",
+          "highlights": [
+            "Tower of London",
+            "Westminster Abbey",
+            "Afternoon Tea"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Scottish Highlands",
+          "description": "Journey through the majestic Scottish Highlands",
+          "highlights": [
+            "Edinburgh Castle",
+            "Highland Landscapes",
+            "Whisky Tasting"
+          ]
+        }
+      ],
+      "created_at": "2024-04-22T16:00:00Z",
+      "updated_at": "2024-04-22T16:00:00Z"
+    },
+    {
+      "id": "8",
+      "title": "Norwegian Fjords Adventure",
+      "description": "Experience the stunning fjords and natural beauty of Norway",
+      "duration": 7,
+      "price": 4599.99,
+      "destination": "Norway",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Oslo Discovery",
+          "description": "Explore Oslo's culture and Viking history",
+          "highlights": ["Viking Ship Museum", "Vigeland Park"]
+        },
+        {
+          "day": 2,
+          "title": "Fjord Cruise",
+          "description": "Cruise through dramatic fjords and visit waterfront villages",
+          "highlights": ["Geirangerfjord", "Flåm Railway"]
+        }
+      ],
+      "created_at": "2024-04-22T17:00:00Z",
+      "updated_at": "2024-04-22T17:00:00Z"
+    },
+    {
+      "id": "9",
+      "title": "Spanish Passion & Culture",
+      "description": "Immerse yourself in Spain's vibrant culture and rich history",
+      "duration": 9,
+      "price": 3799.99,
+      "destination": "Spain",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Barcelona Beginnings",
+          "description": "Discover Gaudi's architecture and Catalan culture",
+          "highlights": ["Sagrada Familia", "Las Ramblas", "Tapas Tour"]
+        },
+        {
+          "day": 2,
+          "title": "Andalusian Adventure",
+          "description": "Experience the magic of southern Spain",
+          "highlights": ["Alhambra Palace", "Flamenco Show"]
+        }
+      ],
+      "created_at": "2024-04-22T18:00:00Z",
+      "updated_at": "2024-04-22T18:00:00Z"
+    },
+    {
+      "id": "10",
+      "title": "Canadian Rockies Explorer",
+      "description": "Discover the majestic beauty of the Canadian Rockies",
+      "duration": 8,
+      "price": 4899.99,
+      "destination": "Canada",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Banff National Park",
+          "description": "Explore Canada's oldest national park",
+          "highlights": ["Lake Louise", "Banff Gondola", "Hot Springs"]
+        },
+        {
+          "day": 2,
+          "title": "Jasper Journey",
+          "description": "Travel the Icefields Parkway to Jasper National Park",
+          "highlights": ["Columbia Icefield", "Athabasca Falls"]
+        }
+      ],
+      "created_at": "2024-04-22T19:00:00Z",
+      "updated_at": "2024-04-22T19:00:00Z"
+    },
+    {
+      "id": "11",
+      "title": "Australian Coastal Paradise",
+      "description": "Experience the best of Australia's east coast, from the Great Barrier Reef to pristine beaches",
+      "duration": 11,
+      "price": 5199.99,
+      "destination": "Australia",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Sydney Discovery",
+          "description": "Explore iconic Sydney landmarks and enjoy a harbor cruise",
+          "highlights": ["Sydney Opera House", "Harbour Bridge", "Bondi Beach"]
+        },
+        {
+          "day": 2,
+          "title": "Great Barrier Reef Adventure",
+          "description": "Snorkel or dive at the world's largest coral reef system",
+          "highlights": ["Marine Life Viewing", "Coral Gardens", "Island Visit"]
+        }
+      ],
+      "created_at": "2024-04-23T10:00:00Z",
+      "updated_at": "2024-04-23T10:00:00Z"
+    },
+    {
+      "id": "12",
+      "title": "San Diego Coastal Escape",
+      "description": "Discover the perfect blend of California sunshine, culture, and coastal beauty",
+      "duration": 6,
+      "price": 2999.99,
+      "destination": "United States of America",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Balboa Park & Zoo",
+          "description": "Visit the world-famous San Diego Zoo and explore Balboa Park's museums",
+          "highlights": ["San Diego Zoo", "Botanical Gardens", "Museums"]
+        },
+        {
+          "day": 2,
+          "title": "Coastal Adventures",
+          "description": "Experience La Jolla's coastal beauty and maritime history",
+          "highlights": ["La Jolla Cove", "USS Midway Museum", "Sunset Sailing"]
+        }
+      ],
+      "created_at": "2024-04-23T11:00:00Z",
+      "updated_at": "2024-04-23T11:00:00Z"
     }
   ]
 }
