@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { TourFiltersProps } from "@/types";
 
 export default function TourFilters({
@@ -15,23 +15,25 @@ export default function TourFilters({
   const [destination, setDestination] = useState("");
   const [showAllTours, setShowAllTours] = useState(false);
 
-  // Get unique destinations for the dropdown
-  const destinations = [...new Set(tours.map((tour) => tour.destination))];
+  // Memoize unique destinations
+  const destinations = useMemo(
+    () => [...new Set(tours.map((tour) => tour.destination))],
+    [tours]
+  );
 
-  // Handle price input validation
-  const handlePriceChange = (
-    value: string,
-    setter: (value: string) => void
-  ) => {
-    const numValue = Number(value);
-    if (value === "" || (numValue >= 0 && !isNaN(numValue))) {
-      setter(value);
-    }
-  };
+  // Memoize price change handler
+  const handlePriceChange = useCallback(
+    (value: string, setter: (value: string) => void) => {
+      const numValue = Number(value);
+      if (value === "" || (numValue >= 0 && !isNaN(numValue))) {
+        setter(value);
+      }
+    },
+    []
+  );
 
-  // Filter tours based on current criteria
-  useEffect(() => {
-    // If no filters are active and "Show All" is not selected, show no tours
+  // Memoize filter logic
+  const applyFilters = useCallback(() => {
     if (
       !showAllTours &&
       !searchQuery &&
@@ -45,22 +47,18 @@ export default function TourFilters({
     }
 
     const filtered = tours.filter((tour) => {
-      // Search query filter
       const searchMatch =
         searchQuery === "" ||
         tour.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         tour.description.toLowerCase().includes(searchQuery.toLowerCase());
 
-      // Price range filter
       const priceMatch =
         (minPrice === "" || tour.price >= Number(minPrice)) &&
         (maxPrice === "" || tour.price <= Number(maxPrice));
 
-      // Duration filter
       const durationMatch =
         duration === "" || tour.duration === Number(duration);
 
-      // Destination filter
       const destinationMatch =
         destination === "" || tour.destination === destination;
 
@@ -78,6 +76,22 @@ export default function TourFilters({
     onFilterChange,
     showAllTours,
   ]);
+
+  // Apply filters when dependencies change
+  useEffect(() => {
+    applyFilters();
+  }, [applyFilters]);
+
+  // Memoize destination options
+  const destinationOptions = useMemo(
+    () =>
+      destinations.map((dest) => (
+        <option key={dest} value={dest}>
+          {dest}
+        </option>
+      )),
+    [destinations]
+  );
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 mb-6">
@@ -147,11 +161,7 @@ export default function TourFilters({
             className="w-full border rounded px-3 py-2 dark:bg-gray-700 dark:text-white"
           >
             <option value="">All destinations</option>
-            {destinations.map((dest) => (
-              <option key={dest} value={dest}>
-                {dest}
-              </option>
-            ))}
+            {destinationOptions}
           </select>
         </div>
 

@@ -2,7 +2,7 @@
 
 import { Tour, TourListProps } from "@/types";
 import { toursApi } from "@/lib/api/tours";
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import TourForm from "./TourForm";
 
 export default function TourList({ tours, onTourUpdated }: TourListProps) {
@@ -10,31 +10,75 @@ export default function TourList({ tours, onTourUpdated }: TourListProps) {
   const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
   const [isEditing, setIsEditing] = useState(false);
 
-  // Handler for editing a tour - sets the tour to edit and shows the form
-  const handleEdit = (tour: Tour) => {
+  // Memoize handlers to prevent unnecessary re-renders
+  const handleEdit = useCallback((tour: Tour) => {
     setSelectedTour(tour);
     setIsEditing(true);
-  };
+  }, []);
 
-  // Handler for deleting a tour - confirms with user and calls the API
-  const handleDelete = async (tourId: string) => {
-    if (window.confirm("Are you sure you want to delete this tour?")) {
-      try {
-        await toursApi.deleteTour(tourId);
-        onTourUpdated(); // Refresh the tour list after deletion
-      } catch (error) {
-        console.error("Failed to delete tour:", error);
-        alert("Failed to delete tour. Please try again.");
+  const handleDelete = useCallback(
+    async (tourId: string) => {
+      if (window.confirm("Are you sure you want to delete this tour?")) {
+        try {
+          await toursApi.deleteTour(tourId);
+          onTourUpdated();
+        } catch (error) {
+          console.error("Failed to delete tour:", error);
+          alert("Failed to delete tour. Please try again.");
+        }
       }
-    }
-  };
+    },
+    [onTourUpdated]
+  );
 
-  // Handler for successful form submission - hides form and refreshes list
-  const handleEditSuccess = () => {
+  const handleEditSuccess = useCallback(() => {
     setSelectedTour(null);
     setIsEditing(false);
     onTourUpdated();
-  };
+  }, [onTourUpdated]);
+
+  // Memoize the create tour button click handler
+  const handleCreateTour = useCallback(() => {
+    setSelectedTour(null);
+    setIsEditing(true);
+  }, []);
+
+  // Memoize the table rows to prevent unnecessary re-renders
+  const tableRows = useMemo(
+    () =>
+      tours.map((tour) => (
+        <tr key={tour.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
+            {tour.title}
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+            {tour.destination}
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+            {tour.duration} days
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+            ${tour.price}
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            {/* Action buttons for editing and deleting tours */}
+            <button
+              onClick={() => handleEdit(tour)}
+              className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-4"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => handleDelete(tour.id)}
+              className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      )),
+    [tours, handleEdit, handleDelete]
+  );
 
   if (isEditing && selectedTour) {
     return (
@@ -50,10 +94,7 @@ export default function TourList({ tours, onTourUpdated }: TourListProps) {
           Manage Tours
         </h2>
         <button
-          onClick={() => {
-            setSelectedTour(null);
-            setIsEditing(true);
-          }}
+          onClick={handleCreateTour}
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
         >
           Create New Tour
@@ -83,41 +124,7 @@ export default function TourList({ tours, onTourUpdated }: TourListProps) {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-            {/* Map through tours array to create table rows */}
-            {tours.map((tour) => (
-              <tr
-                key={tour.id}
-                className="hover:bg-gray-50 dark:hover:bg-gray-700"
-              >
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
-                  {tour.title}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                  {tour.destination}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                  {tour.duration} days
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                  ${tour.price}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  {/* Action buttons for editing and deleting tours */}
-                  <button
-                    onClick={() => handleEdit(tour)}
-                    className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-4"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDelete(tour.id)}
-                    className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300"
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
+            {tableRows}
           </tbody>
         </table>
       </div>

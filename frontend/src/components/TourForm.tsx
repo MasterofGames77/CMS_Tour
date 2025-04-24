@@ -1,124 +1,147 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useCallback, useMemo, useRef } from "react";
 import { Tour, TourFormProps } from "@/types";
 import { toursApi } from "@/lib/api/tours";
 import MarkdownEditor from "./MarkdownEditor";
 
 export default function TourForm({ initialData, onSuccess }: TourFormProps) {
+  // Use refs for form fields that don't need to trigger re-renders
+  const formRef = useRef<HTMLFormElement>(null);
+
   // State management for form fields and UI feedback
-  const [title, setTitle] = useState(initialData?.title || "");
-  const [description, setDescription] = useState(
-    initialData?.description || ""
-  );
-  const [duration, setDuration] = useState(initialData?.duration || 1);
-  const [price, setPrice] = useState(initialData?.price || 0);
-  const [destination, setDestination] = useState(
-    initialData?.destination || ""
-  );
+  const [formData, setFormData] = useState({
+    title: initialData?.title || "",
+    description: initialData?.description || "",
+    duration: initialData?.duration || 1,
+    price: initialData?.price || 0,
+    destination: initialData?.destination || "",
+  });
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Form submission handler - creates or updates a tour
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
+  // Memoize form field handlers
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
+      setFormData((prev) => ({
+        ...prev,
+        [name]: name === "duration" || name === "price" ? Number(value) : value,
+      }));
+    },
+    []
+  );
 
-    // Prepare the tour data for submission
-    const payload = {
-      title,
-      description,
-      duration,
-      price,
-      destination,
-      itinerary: initialData?.itinerary || [],
-    };
+  // Memoize description change handler
+  const handleDescriptionChange = useCallback((value: string) => {
+    setFormData((prev) => ({ ...prev, description: value }));
+  }, []);
 
-    try {
-      let result: Tour;
-      // Determine whether to create a new tour or update an existing one
-      if (initialData) {
-        result = await toursApi.updateTour(initialData.id, payload);
-      } else {
-        result = await toursApi.createTour(
-          payload as Omit<Tour, "id" | "created_at" | "updated_at">
+  // Memoize form submission handler
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      if (!formRef.current?.checkValidity()) return;
+
+      setLoading(true);
+      setError(null);
+
+      try {
+        const payload = {
+          ...formData,
+          itinerary: initialData?.itinerary || [],
+        };
+
+        const result = initialData
+          ? await toursApi.updateTour(initialData.id, payload)
+          : await toursApi.createTour(
+              payload as Omit<Tour, "id" | "created_at" | "updated_at">
+            );
+
+        onSuccess(result);
+      } catch (err: unknown) {
+        console.error("Submission failed:", err);
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Failed to save tour. Please try again."
         );
+      } finally {
+        setLoading(false);
       }
-      onSuccess(result); // Call success callback with the result
-    } catch (err: unknown) {
-      console.error("Submission failed:", err);
-      const errorMessage =
-        err instanceof Error
-          ? err.message
-          : "Failed to save tour. Please try again.";
-      setError(errorMessage);
-    } finally {
-      setLoading(false);
-    }
-  };
+    },
+    [formData, initialData, onSuccess]
+  );
+
+  // Memoize form title
+  const formTitle = useMemo(
+    () => (initialData ? "Edit Tour" : "Create New Tour"),
+    [initialData]
+  );
 
   return (
     <form
+      ref={formRef}
       onSubmit={handleSubmit}
       className="max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md space-y-4"
     >
-      {/* Form header showing current mode (Create/Edit) */}
       <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-        {initialData ? "Edit Tour" : "Create New Tour"}
+        {formTitle}
       </h2>
 
-      {/* Error message display */}
-      {error && <p className="text-red-500">{error}</p>}
+      {error && (
+        <div className="p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded">
+          {error}
+        </div>
+      )}
 
-      {/* Title input field */}
       <div>
         <label className="block font-medium text-gray-700 dark:text-gray-200">
           Title
         </label>
         <input
           type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          name="title"
+          value={formData.title}
+          onChange={handleInputChange}
           className="w-full border px-3 py-2 rounded dark:bg-gray-700 dark:text-white"
           required
         />
       </div>
 
-      {/* Description field with markdown support */}
       <MarkdownEditor
         label="Description"
-        value={description}
-        onChange={setDescription}
+        value={formData.description}
+        onChange={handleDescriptionChange}
         required
       />
 
-      {/* Grid layout for duration and price fields */}
       <div className="grid grid-cols-2 gap-4">
-        {/* Duration input field */}
         <div>
           <label className="block font-medium text-gray-700 dark:text-gray-200">
             Duration (days)
           </label>
           <input
             type="number"
-            value={duration}
-            onChange={(e) => setDuration(Number(e.target.value))}
+            name="duration"
+            value={formData.duration}
+            onChange={handleInputChange}
             className="w-full border px-3 py-2 rounded dark:bg-gray-700 dark:text-white"
             required
             min={1}
           />
         </div>
 
-        {/* Price input field */}
         <div>
           <label className="block font-medium text-gray-700 dark:text-gray-200">
             Price (USD)
           </label>
           <input
             type="number"
-            value={price}
-            onChange={(e) => setPrice(Number(e.target.value))}
+            name="price"
+            value={formData.price}
+            onChange={handleInputChange}
             className="w-full border px-3 py-2 rounded dark:bg-gray-700 dark:text-white"
             required
             min={0}
@@ -126,27 +149,26 @@ export default function TourForm({ initialData, onSuccess }: TourFormProps) {
         </div>
       </div>
 
-      {/* Destination input field */}
       <div>
         <label className="block font-medium text-gray-700 dark:text-gray-200">
           Destination
         </label>
         <input
           type="text"
-          value={destination}
-          onChange={(e) => setDestination(e.target.value)}
+          name="destination"
+          value={formData.destination}
+          onChange={handleInputChange}
           className="w-full border px-3 py-2 rounded dark:bg-gray-700 dark:text-white"
           required
         />
       </div>
 
-      {/* Submit button with loading state */}
       <button
         type="submit"
         disabled={loading}
         className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded transition disabled:opacity-50"
       >
-        {loading ? "Saving..." : initialData ? "Update Tour" : "Create Tour"}
+        {loading ? "Saving..." : formTitle}
       </button>
     </form>
   );
