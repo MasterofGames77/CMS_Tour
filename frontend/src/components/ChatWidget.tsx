@@ -128,23 +128,88 @@ Would you like to know more about specific aspects of the tour or discuss custom
 
       let response = "";
 
-      // Check for specific country queries first
-      if (lowerMessage.includes("italy")) {
-        response = `🇮🇹 Our Italian Treasures tour (10 days) offers:
-• Rome: Vatican, Colosseum, and Roman Forum
-• Florence: Renaissance art and architecture
-• Venice: Canals and historic landmarks
-• Authentic Italian cuisine and wine tasting
+      // Canadian cities and regions
+      if (lowerMessage.includes("vancouver")) {
+        response = `While Vancouver isn't directly on our Canadian Rockies tour, we can help you extend your trip to include this beautiful city! Vancouver highlights could include:
+• Stanley Park and Seawall
+• Granville Island Market
+• Capilano Suspension Bridge
+• Gastown Historic District
 
-Would you like to customize this tour or learn more about specific activities?`;
-      } else if (lowerMessage.includes("france")) {
-        response = `🇫🇷 Our French Riviera & Provence tour (8 days) includes:
-• Paris: Eiffel Tower and Louvre
-• French Riviera: Nice and Cannes
-• Provence: Lavender fields and historic villages
-• French cuisine and wine experiences
+Would you like to learn more about combining Vancouver with our Canadian Rockies Explorer tour?`;
+      } else if (
+        lowerMessage.includes("banff") ||
+        lowerMessage.includes("lake louise")
+      ) {
+        response = `These destinations are highlights of our Canadian Rockies Explorer tour (8 days):
+• Banff National Park exploration
+• Lake Louise canoeing and hiking
+• Sulphur Mountain Gondola
+• Hot springs experience
 
-Would you like to customize this tour or learn more about specific activities?`;
+Would you like to know more about our activities in Banff and Lake Louise?`;
+      } else if (lowerMessage.includes("jasper")) {
+        response = `Jasper is a key destination in our Canadian Rockies Explorer tour (8 days):
+• Maligne Canyon walks
+• Spirit Island boat tour
+• Jasper SkyTram experience
+• Wildlife viewing opportunities
+
+Would you like more details about our time in Jasper National Park?`;
+      }
+      // Japanese cities and regions
+      else if (lowerMessage.includes("tokyo")) {
+        response = `🗾 Tokyo is a major highlight of our Japanese Cultural Journey (12 days):
+• Modern Shibuya and Harajuku districts
+• Traditional Asakusa area and Senso-ji Temple
+• TeamLab Borderless Digital Art Museum
+• Local food experiences
+
+Would you like to know more about our Tokyo activities?`;
+      } else if (lowerMessage.includes("kyoto")) {
+        response = `🗾 Kyoto is a cultural centerpiece of our Japanese Cultural Journey:
+• Famous temples and gardens
+• Traditional tea ceremony
+• Fushimi Inari Shrine
+• Arashiyama Bamboo Grove
+
+Would you like more details about our Kyoto experiences?`;
+      }
+      // Italian cities and regions
+      else if (lowerMessage.includes("rome")) {
+        response = `Rome is the starting point of our Italian Treasures tour (10 days):
+• Vatican Museums and Sistine Chapel
+• Colosseum and Roman Forum
+• Pantheon and Trevi Fountain
+• Local cuisine experiences
+
+Would you like more details about our Rome itinerary?`;
+      } else if (lowerMessage.includes("venice")) {
+        response = `Venice is a highlight of our Italian Treasures tour:
+• Grand Canal boat tour
+• St. Mark's Square and Basilica
+• Murano glass-blowing demonstration
+• Venetian mask workshop
+
+Would you like to know more about our Venice activities?`;
+      } else if (lowerMessage.includes("florence")) {
+        response = `🇮🇹 Florence features prominently in our Italian Treasures tour:
+• Uffizi Gallery
+• Michelangelo's David
+• Duomo Cathedral
+• Tuscan wine tasting
+
+Would you like more details about our Florence experiences?`;
+      }
+      // Main country responses
+      else if (lowerMessage.includes("canada")) {
+        response = `Our Canadian Rockies Explorer (8 days) features:
+• Banff National Park and Lake Louise
+• Jasper National Park
+• Columbia Icefield
+• Mountain wildlife viewing
+
+Which area interests you most: Banff, Jasper, or the Icefields Parkway?`;
       } else if (lowerMessage.includes("japan")) {
         response = `🗾 Our Japanese Cultural Journey (12 days) features:
 • Tokyo: Modern and traditional districts
@@ -152,31 +217,15 @@ Would you like to customize this tour or learn more about specific activities?`;
 • Mount Fuji and Hakone hot springs
 • Traditional tea ceremonies and cuisine
 
-Would you like to customize this tour or learn more about specific activities?`;
-      } else if (lowerMessage.includes("peru")) {
-        response = `🏔️ Our Machu Picchu Adventure (8 days) includes:
-• Machu Picchu and the Sacred Valley
-• Cusco: Historic capital of the Inca Empire
-• Andean culture and traditions
-• Scenic train journey through the mountains
+Which city interests you most: Tokyo, Kyoto, or Hakone?`;
+      } else if (lowerMessage.includes("italy")) {
+        response = `Our Italian Treasures tour (10 days) offers:
+• Rome: Vatican, Colosseum, and Roman Forum
+• Florence: Renaissance art and architecture
+• Venice: Canals and historic landmarks
+• Milan: Cathedral and fashion district
 
-Would you like to customize this tour or learn more about specific activities?`;
-      } else if (lowerMessage.includes("tanzania")) {
-        response = `🦁 Our Serengeti Safari (10 days) offers:
-• Great Migration viewing
-• Ngorongoro Crater wildlife
-• Maasai cultural experiences
-• Luxury safari lodges
-
-Would you like to customize this tour or learn more about specific activities?`;
-      } else if (lowerMessage.includes("australia")) {
-        response = `🦘 Our Australian Coastal Paradise (14 days) includes:
-• Sydney and the Great Barrier Reef
-• Outback and Uluru
-• Aboriginal cultural experiences
-• Great Ocean Road
-
-Would you like to customize this tour or learn more about specific activities?`;
+Which city interests you most: Rome, Florence, Venice, or Milan?`;
       }
       // Check for region queries if no specific country match
       else if (
@@ -184,33 +233,33 @@ Would you like to customize this tour or learn more about specific activities?`;
         lowerMessage.includes("european")
       ) {
         response = `✈️ Our European destinations:
-• Italy 🇮🇹
-• France 🇫🇷
-• United Kingdom 🇬🇧
-• Norway 🇳🇴
-• Spain 🇪🇸
+• Italy (Rome, Florence, Venice, Milan)
+• France (Nice, Provence, Monaco, Marseille)
+• United Kingdom (London, Edinburgh, Glasgow)
+• Norway (Oslo, Bergen, Trondheim)
+• Spain 🇪🇸 (Barcelona, Madrid, Valencia)
 
-Which destination interests you most?`;
+Which country or city interests you most?`;
       } else if (lowerMessage.includes("asia")) {
         response = `🗾 Our Asian destinations:
-• Japan 🇯🇵
-• China 🇨🇳
+• Japan (Tokyo, Kyoto, Hakone, Osaka)
+• China (Beijing, Shanghai, Xi'an)
 
-Which destination interests you most?`;
+Which country or city interests you most?`;
       } else if (
         lowerMessage.includes("america") ||
         lowerMessage.includes("americas")
       ) {
         response = `🌎 Our American destinations:
-• Peru 🇵🇪
-• Canada 🇨🇦
-• USA 🇺🇸
+• Peru (Cusco, Sacred Valley, Machu Picchu)
+• Canada (Banff, Jasper, Lake Louise, Montreal)
+• United States (San Diego, New York City, Chicago)
 
-Which destination interests you most?`;
+Which country or city interests you most?`;
       } else if (lowerMessage.includes("africa")) {
         response = `🦁 Our African destinations:
-• Tanzania 🇹🇿
-• South Africa 🇿🇦
+• Tanzania
+• South Africa
 
 Which destination interests you most?`;
       } else if (
@@ -218,8 +267,8 @@ Which destination interests you most?`;
         lowerMessage.includes("oceania")
       ) {
         response = `🦘 Our Oceania destinations:
-• Australia 🇦🇺
-• New Zealand 🇳🇿
+• Australia
+• New Zealand
 
 Which destination interests you most?`;
       } else if (
@@ -227,7 +276,7 @@ Which destination interests you most?`;
         lowerMessage.includes("where")
       ) {
         response = `🌍 We offer tours in these regions:
-• Europe 🇪🇺
+• Europe
 • Asia 🌏
 • Americas 🌎
 • Africa 🌍
@@ -258,11 +307,266 @@ Would you like to know the price for a specific tour?`;
       } else if (customization.destination) {
         response = handleCustomization(customization.destination, userMessage);
       }
+      // French cities and regions
+      else if (lowerMessage.includes("paris")) {
+        response = `🇫🇷 While Paris isn't directly on our French Riviera tour, we can help you extend your trip to include the City of Light! Paris highlights could include:
+• Eiffel Tower and Louvre Museum
+• Notre-Dame Cathedral
+• Seine River Cruise
+• French Cuisine Experience
+
+Would you like to learn more about combining Paris with our French Riviera tour?`;
+      } else if (lowerMessage.includes("nice")) {
+        response = `🇫🇷 Nice is a key destination in our French Riviera & Provence tour (8 days):
+• Old Town exploration
+• Promenade des Anglais
+• Cours Saleya Market
+• Mediterranean beaches
+
+Would you like more details about our activities in Nice?`;
+      } else if (lowerMessage.includes("provence")) {
+        response = `🇫🇷 Provence is a highlight of our French Riviera tour:
+• Lavender fields of Valensole
+• Historic villages
+• Wine tasting experiences
+• Local markets and cuisine
+
+Would you like to know more about our Provence activities?`;
+      }
+      // Peru cities and regions
+      else if (lowerMessage.includes("cusco")) {
+        response = `🇵🇪 Cusco is the historic starting point of our Machu Picchu Adventure (8 days):
+• San Blas artisan district
+• Cusco Cathedral
+• Local market visits
+• Altitude acclimatization activities
+
+Would you like more details about our time in Cusco?`;
+      } else if (lowerMessage.includes("machu picchu")) {
+        response = `🇵🇪 Machu Picchu is the crown jewel of our Peruvian tour:
+• Sunrise at the Sun Gate
+• Guided archaeological tour
+• Optional Huayna Picchu climb
+• Traditional Andean lunch
+
+Would you like to know more about our Machu Picchu experience?`;
+      }
+      // Australian cities and regions
+      else if (lowerMessage.includes("sydney")) {
+        response = `🦘 Sydney is a major highlight of our Australian Coastal Paradise tour:
+• Opera House tour
+• Harbor Bridge experience
+• Bondi Beach
+• The Rocks historic district
+
+Would you like more details about our Sydney activities?`;
+      } else if (
+        lowerMessage.includes("barrier reef") ||
+        lowerMessage.includes("cairns")
+      ) {
+        response = `🦘 The Great Barrier Reef portion of our tour includes:
+• Snorkeling or diving options
+• Marine life viewing
+• Semi-submersible tour
+• Tropical Port Douglas visit
+
+Would you like to know more about our reef experiences?`;
+      } else if (
+        lowerMessage.includes("uluru") ||
+        lowerMessage.includes("ayers rock")
+      ) {
+        response = `🦘 Our Uluru experience includes:
+• Sunrise and sunset viewing
+• Aboriginal cultural tours
+• Field of Light installation
+• Bush tucker experience
+
+Would you like more details about our time at Uluru?`;
+      }
+      // African destinations
+      else if (lowerMessage.includes("serengeti")) {
+        response = `🦁 The Serengeti is the highlight of our Tanzania Safari (9 days):
+• Great Migration viewing
+• Big Five wildlife spotting
+• Luxury lodge stays
+• Sunrise game drives
+
+Would you like more details about our Serengeti experience?`;
+      } else if (lowerMessage.includes("ngorongoro")) {
+        response = `🦁 The Ngorongoro Crater is a key part of our Tanzania Safari:
+• Full-day crater game drive
+• Black rhino tracking
+• Crater floor picnic
+• Maasai village visit
+
+Would you like to know more about our Ngorongoro activities?`;
+      }
+      // Main country responses (continue with existing ones)
+      else if (lowerMessage.includes("france")) {
+        response = `🇫🇷 Our French Riviera & Provence tour (8 days) includes:
+• Nice: Coastal beauty and markets
+• Provence: Lavender fields and villages
+• Monaco: Palace and Casino
+• Marseille: Historic port and cuisine
+
+Which area interests you most: Nice, Provence, Monaco, or Marseille?`;
+      } else if (lowerMessage.includes("peru")) {
+        response = `🏔️ Our Machu Picchu Adventure (8 days) includes:
+• Cusco: Inca capital exploration
+• Sacred Valley: Ancient ruins and culture
+• Machu Picchu: Wonder of the World
+• Pisac: Markets and ruins
+
+Which area interests you most: Cusco, Sacred Valley, Machu Picchu, or Pisac?`;
+      } else if (lowerMessage.includes("australia")) {
+        response = `🦘 Our Australian Coastal Paradise (11 days) includes:
+• Sydney: Harbor city highlights
+• Great Barrier Reef: Marine wonders
+• Uluru: Sacred outback site
+• Melbourne: Culture and coast
+
+Which area interests you most: Sydney, Great Barrier Reef, or Uluru?`;
+      } else if (lowerMessage.includes("tanzania")) {
+        response = `🦁 Our Serengeti Safari (9 days) offers:
+• Serengeti: Great Migration
+• Ngorongoro: Crater wildlife
+• Tarangire: Elephant herds
+• Lake Manyara: Tree-climbing lions
+
+Which area interests you most: Serengeti, Ngorongoro, or Tarangire?`;
+      }
+      // US cities
+      else if (lowerMessage.includes("san diego")) {
+        response = `Our San Diego Coastal Escape (6 days) features:
+• Balboa Park and world-famous Zoo
+• La Jolla Cove and coastal trails
+• USS Midway Museum
+• Coronado Island and beaches
+
+Would you like to know more about specific activities in San Diego?`;
+      } else if (
+        lowerMessage.includes("new york") ||
+        lowerMessage.includes("nyc")
+      ) {
+        response = `While New York City isn't currently part of our standard tours, we can help arrange a custom city experience including:
+• Central Park and Times Square
+• Statue of Liberty and Ellis Island
+• Broadway shows and Theater District
+• World-class museums (MET, MoMA)
+
+Would you like to learn more about creating a custom New York City experience?`;
+      } else if (lowerMessage.includes("la jolla")) {
+        response = `La Jolla is a highlight of our San Diego tour:
+• La Jolla Cove and sea lions
+• Torrey Pines State Natural Reserve
+• Scenic coastal walks
+• Local art galleries and dining
+
+Would you like more details about our La Jolla activities?`;
+      }
+      // Continue with existing country responses...
+      else if (
+        lowerMessage.includes("united states") ||
+        lowerMessage.includes("usa")
+      ) {
+        response = `Our United States destinations include:
+• San Diego: Coastal beauty and culture (6-day tour)
+• New York City: Urban exploration
+• Chicago: Architecture and culture (custom experience)
+
+Which city interests you most: San Diego, New York City, or Chicago?`;
+      }
+      // Additional European cities
+      else if (lowerMessage.includes("milan")) {
+        response = `Milan is a fashionable addition to our Italian Treasures tour:
+• Milan Cathedral (Duomo)
+• Leonardo da Vinci's Last Supper
+• Fashion District shopping
+• Galleria Vittorio Emanuele II
+
+Would you like to learn more about including Milan in your Italian journey?`;
+      } else if (lowerMessage.includes("marseille")) {
+        response = `Marseille can be included in our French Riviera tour:
+• Vieux-Port (Old Port)
+• Notre-Dame de la Garde basilica
+• Calanques National Park
+• Bouillabaisse tasting experience
+
+Would you like to know more about adding Marseille to your itinerary?`;
+      } else if (lowerMessage.includes("glasgow")) {
+        response = `Glasgow adds urban culture to our British Heritage tour:
+• Kelvingrove Art Gallery and Museum
+• Glasgow Cathedral
+• West End food scene
+• Charles Rennie Mackintosh architecture
+
+Would you like more details about including Glasgow in your journey?`;
+      } else if (lowerMessage.includes("trondheim")) {
+        response = `Trondheim enriches our Norwegian Fjords tour:
+• Nidaros Cathedral
+• Old Town Bridge (Gamle Bybro)
+• NTNU Science Museum
+• Local food hall exploration
+
+Would you like to learn more about adding Trondheim to your Norwegian adventure?`;
+      } else if (lowerMessage.includes("valencia")) {
+        response = `Valencia brings Mediterranean flair to our Spanish tour:
+• City of Arts and Sciences
+• Historic Central Market
+• Paella cooking experience
+• Turia Gardens
+
+Would you like to know more about including Valencia in your Spanish journey?`;
+      }
+      // Additional Asian cities
+      else if (lowerMessage.includes("osaka")) {
+        response = `Osaka adds culinary delights to our Japanese journey:
+• Dotonbori food district
+• Osaka Castle
+• Kuromon Ichiba Market
+• Street food experience
+
+Would you like to learn more about including Osaka in your Japanese adventure?`;
+      } else if (lowerMessage.includes("xian")) {
+        response = `Xi'an brings ancient history to our China experience:
+• Terracotta Warriors
+• Ancient City Wall cycling
+• Muslim Quarter food tour
+• Tang Dynasty show
+
+Would you like to know more about adding Xi'an to your itinerary?`;
+      }
+      // Additional Americas destinations
+      else if (lowerMessage.includes("montreal")) {
+        response = `Montreal can complement our Canadian Rockies tour:
+• Old Montreal historic district
+• Mount Royal Park
+• Notre-Dame Basilica
+• Food tour of local specialties
+
+Would you like to learn more about combining Montreal with your Rockies adventure?`;
+      } else if (lowerMessage.includes("sacred valley")) {
+        response = `The Sacred Valley enriches our Peruvian experience:
+• Pisac archaeological site
+• Ollantaytambo fortress
+• Local textile workshops
+• Traditional market visits
+
+Would you like more details about our Sacred Valley activities?`;
+      } else if (lowerMessage.includes("chicago")) {
+        response = `While not on our standard tour, we can arrange a Chicago experience:
+• Millennium Park and Cloud Gate
+• Architecture river cruise
+• Art Institute of Chicago
+• Deep-dish pizza experience
+
+Would you like to learn about creating a custom Chicago itinerary?`;
+      }
 
       setIsTyping(false);
       return (
         response ||
-        "I'm here to help you plan your perfect adventure! Would you like to explore a specific region or destination?"
+        "I'm here to help you discover your perfect destination! Would you like to know more about a specific country, city, or region?"
       );
     },
     [customization.destination, handleCustomization]
