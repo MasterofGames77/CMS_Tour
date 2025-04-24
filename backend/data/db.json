@@ -12,13 +12,95 @@
           "day": 1,
           "title": "Arrival in Rome",
           "description": "Welcome dinner and evening walk through historic Rome",
-          "highlights": ["Trevi Fountain", "Spanish Steps"]
+          "highlights": [
+            "Trevi Fountain",
+            "Spanish Steps",
+            "Welcome Dinner in Trastevere"
+          ]
         },
         {
           "day": 2,
           "title": "Vatican and Roman History",
           "description": "Guided tour of Vatican Museums and Colosseum",
-          "highlights": ["Sistine Chapel", "Roman Forum"]
+          "highlights": [
+            "Sistine Chapel",
+            "St. Peter's Basilica",
+            "Roman Forum",
+            "Colosseum"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Ancient Rome Deep Dive",
+          "description": "Explore the hidden gems of ancient Rome and underground catacombs",
+          "highlights": [
+            "Pantheon",
+            "Catacombs",
+            "Appian Way",
+            "Baths of Caracalla"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Florence Introduction",
+          "description": "Travel to Florence and discover the birthplace of the Renaissance",
+          "highlights": [
+            "Duomo Cathedral",
+            "Baptistery",
+            "Evening Tuscan Wine Tasting"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Florence Art & Culture",
+          "description": "Immerse yourself in Renaissance art and architecture",
+          "highlights": [
+            "Uffizi Gallery",
+            "Michelangelo's David",
+            "Ponte Vecchio"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Tuscan Countryside",
+          "description": "Day trip through the stunning Tuscan landscape",
+          "highlights": ["Siena", "San Gimignano", "Chianti Wine Region"]
+        },
+        {
+          "day": 7,
+          "title": "Venice Arrival",
+          "description": "Travel to Venice and begin exploring the city of canals",
+          "highlights": [
+            "Grand Canal Boat Tour",
+            "St. Mark's Square",
+            "Rialto Bridge"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Venice Deep Dive",
+          "description": "Discover Venice's artistic heritage and hidden corners",
+          "highlights": [
+            "Doge's Palace",
+            "Murano Glass Blowing",
+            "Venetian Mask Workshop"
+          ]
+        },
+        {
+          "day": 9,
+          "title": "Venice Islands",
+          "description": "Explore the colorful islands of the Venetian lagoon",
+          "highlights": ["Murano", "Burano", "Venetian Lagoon Sunset Cruise"]
+        },
+        {
+          "day": 10,
+          "title": "Final Day & Departure",
+          "description": "Last morning in Venice with optional activities before departure",
+          "highlights": [
+            "Morning Market Visit",
+            "Gondola Ride",
+            "Farewell Lunch"
+          ]
         }
       ],
       "created_at": "2024-04-22T10:00:00Z",
@@ -43,6 +125,106 @@
           "title": "Mount Fuji and Hakone",
           "description": "Visit iconic Mount Fuji and relax in traditional onsen",
           "highlights": ["Mount Fuji", "Hakone Hot Springs"]
+        },
+        {
+          "day": 3,
+          "title": "Modern Tokyo & Technology",
+          "description": "Experience Japan's cutting-edge technology and pop culture",
+          "highlights": [
+            "Akihabara Electric Town",
+            "TeamLab Borderless Digital Art Museum",
+            "Robot Restaurant Show"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Tokyo to Kyoto",
+          "description": "Travel to Kyoto via bullet train and begin exploring the cultural heart of Japan",
+          "highlights": [
+            "Shinkansen Experience",
+            "Kinkaku-ji (Golden Pavilion)",
+            "Welcome Tea Ceremony"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Kyoto's Ancient Temples",
+          "description": "Visit Kyoto's most significant temples and gardens",
+          "highlights": [
+            "Fushimi Inari Shrine",
+            "Kiyomizu-dera Temple",
+            "Arashiyama Bamboo Grove"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Cultural Immersion Day",
+          "description": "Participate in traditional Japanese cultural activities",
+          "highlights": [
+            "Kimono Wearing Experience",
+            "Traditional Crafts Workshop",
+            "Zen Meditation Session"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Nara Day Trip",
+          "description": "Explore Japan's first permanent capital",
+          "highlights": [
+            "Todai-ji Temple",
+            "Nara Deer Park",
+            "Great Buddha Statue"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Osaka Adventure",
+          "description": "Experience the vibrant food culture and entertainment of Osaka",
+          "highlights": [
+            "Osaka Castle",
+            "Dotonbori Food Street",
+            "Kuromon Market Tour"
+          ]
+        },
+        {
+          "day": 9,
+          "title": "Hiroshima & Miyajima",
+          "description": "Visit historic Hiroshima and the sacred island of Miyajima",
+          "highlights": [
+            "Peace Memorial Park",
+            "Atomic Bomb Dome",
+            "Itsukushima Floating Torii Gate"
+          ]
+        },
+        {
+          "day": 10,
+          "title": "Kanazawa Heritage",
+          "description": "Discover the well-preserved Edo-period city",
+          "highlights": [
+            "Kenroku-en Garden",
+            "Samurai District",
+            "Gold Leaf Workshop"
+          ]
+        },
+        {
+          "day": 11,
+          "title": "Return to Tokyo",
+          "description": "Travel back to Tokyo and explore contemporary art and architecture",
+          "highlights": [
+            "Roppongi Hills Observation Deck",
+            "Mori Art Museum",
+            "Tsukiji Outer Market"
+          ]
+        },
+        {
+          "day": 12,
+          "title": "Final Day & Departure",
+          "description": "Last-minute shopping and cultural experiences before departure",
+          "highlights": [
+            "Harajuku Fashion Street",
+            "Traditional Japanese Garden Visit",
+            "Farewell Dinner"
+          ]
         }
       ],
       "created_at": "2024-04-22T11:00:00Z",
@@ -59,14 +241,78 @@
         {
           "day": 1,
           "title": "Cusco Acclimatization",
-          "description": "Explore the ancient capital of the Inca Empire",
-          "highlights": ["San Blas District", "Cusco Cathedral"]
+          "description": "Explore the ancient capital of the Inca Empire while adjusting to the altitude",
+          "highlights": [
+            "San Blas District",
+            "Cusco Cathedral",
+            "Welcome Dinner with Local Family"
+          ]
         },
         {
           "day": 2,
           "title": "Sacred Valley",
           "description": "Visit ancient ruins and local markets in the Sacred Valley",
-          "highlights": ["Pisac Ruins", "Ollantaytambo Fortress"]
+          "highlights": [
+            "Pisac Ruins",
+            "Ollantaytambo Fortress",
+            "Traditional Market Visit"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Inca Trail Beginning",
+          "description": "Start the classic Inca Trail trek through the Andes",
+          "highlights": [
+            "Llactapata Ruins",
+            "Mountain Views",
+            "First Camp Setup"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Dead Woman's Pass",
+          "description": "Challenging climb to the highest point of the trek",
+          "highlights": ["Warmiwañusca Pass", "Cloud Forest", "Inca Stone Path"]
+        },
+        {
+          "day": 5,
+          "title": "Archaeological Sites",
+          "description": "Visit multiple Inca sites along the trail",
+          "highlights": [
+            "Runkurakay Pass",
+            "Sayacmarca Ruins",
+            "Phuyupatamarca"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Machu Picchu Arrival",
+          "description": "Early morning arrival at Machu Picchu through the Sun Gate",
+          "highlights": [
+            "Sun Gate Sunrise",
+            "Guided Machu Picchu Tour",
+            "Inca Bridge"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Machu Picchu & Huayna Picchu",
+          "description": "Second day at Machu Picchu with optional Huayna Picchu climb",
+          "highlights": [
+            "Huayna Picchu Mountain",
+            "Temple of the Moon",
+            "Aguas Calientes Hot Springs"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Return to Cusco",
+          "description": "Scenic train journey back to Cusco and farewell celebrations",
+          "highlights": [
+            "Vistadome Train Journey",
+            "San Pedro Market",
+            "Farewell Dinner"
+          ]
         }
       ],
       "created_at": "2024-04-22T12:00:00Z",
@@ -83,14 +329,65 @@
         {
           "day": 1,
           "title": "Reykjavik Welcome",
-          "description": "City tour and northern lights preparation workshop",
-          "highlights": ["Hallgrímskirkja", "Aurora Museum"]
+          "description": "Arrival in Reykjavik with city tour and northern lights preparation workshop",
+          "highlights": [
+            "Hallgrímskirkja",
+            "Aurora Museum",
+            "Photography Workshop"
+          ]
         },
         {
           "day": 2,
           "title": "Golden Circle",
-          "description": "Explore Iceland's most famous sightseeing route",
-          "highlights": ["Geysir", "Gullfoss Waterfall"]
+          "description": "Explore Iceland's most famous sightseeing route with evening aurora hunting",
+          "highlights": [
+            "Geysir",
+            "Gullfoss Waterfall",
+            "Þingvellir National Park",
+            "Evening Northern Lights Hunt"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "South Coast Adventure",
+          "description": "Explore Iceland's dramatic south coast and black sand beaches",
+          "highlights": [
+            "Seljalandsfoss Waterfall",
+            "Reynisfjara Black Sand Beach",
+            "Vík Village",
+            "Northern Lights Viewing"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Glacier Experience",
+          "description": "Glacier hiking and ice cave exploration with evening aurora photography",
+          "highlights": [
+            "Sólheimajökull Glacier Hike",
+            "Ice Cave Tour",
+            "Aurora Photography Session"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Snæfellsnes Peninsula",
+          "description": "Discover the diverse landscapes of the Snæfellsnes Peninsula",
+          "highlights": [
+            "Kirkjufell Mountain",
+            "Djúpalónssandur Beach",
+            "Seal Colony",
+            "Final Aurora Hunt"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Blue Lagoon & Departure",
+          "description": "Relax in the Blue Lagoon before departure",
+          "highlights": [
+            "Blue Lagoon Spa",
+            "Farewell Lunch",
+            "Keflavík Airport Transfer"
+          ]
         }
       ],
       "created_at": "2024-04-22T13:00:00Z",
@@ -108,13 +405,79 @@
           "day": 1,
           "title": "Arrival in Arusha",
           "description": "Welcome briefing and preparation for safari adventure",
-          "highlights": ["Cultural Heritage Centre", "Safari Briefing"]
+          "highlights": [
+            "Cultural Heritage Centre",
+            "Safari Briefing",
+            "Welcome Dinner"
+          ]
         },
         {
           "day": 2,
-          "title": "Serengeti National Park",
-          "description": "Full-day game drive in the Serengeti",
-          "highlights": ["Big Five Viewing", "Great Migration"]
+          "title": "Tarangire National Park",
+          "description": "First game drive in Tarangire, famous for its elephants",
+          "highlights": [
+            "Elephant Herds",
+            "Ancient Baobab Trees",
+            "Bird Watching"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Lake Manyara",
+          "description": "Explore Lake Manyara National Park and its tree-climbing lions",
+          "highlights": ["Tree-climbing Lions", "Flamingo Flocks", "Hippo Pool"]
+        },
+        {
+          "day": 4,
+          "title": "Ngorongoro Crater",
+          "description": "Full-day game drive in the world's largest intact caldera",
+          "highlights": [
+            "Big Five Viewing",
+            "Crater Floor Picnic",
+            "Black Rhino Tracking"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Serengeti Arrival",
+          "description": "Journey to the Serengeti with game viewing en route",
+          "highlights": [
+            "Olduvai Gorge Visit",
+            "Maasai Village",
+            "Evening Game Drive"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Great Migration",
+          "description": "Full day following the wildebeest migration",
+          "highlights": [
+            "Wildebeest Herds",
+            "River Crossing",
+            "Predator Sightings"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Central Serengeti",
+          "description": "Explore the central Serengeti's rich wildlife areas",
+          "highlights": [
+            "Big Cat Tracking",
+            "Balloon Safari Option",
+            "Sunset Game Drive"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Northern Serengeti",
+          "description": "Adventure in the remote northern Serengeti",
+          "highlights": ["Mara River", "Kopjes Exploration", "Night Game Drive"]
+        },
+        {
+          "day": 9,
+          "title": "Return to Arusha",
+          "description": "Morning game drive and return flight to Arusha",
+          "highlights": ["Final Game Drive", "Scenic Flight", "Farewell Dinner"]
         }
       ],
       "created_at": "2024-04-22T14:00:00Z",
@@ -132,13 +495,79 @@
           "day": 1,
           "title": "Nice Welcome",
           "description": "Arrive in Nice and enjoy a welcome dinner in the Old Town",
-          "highlights": ["Nice Old Town", "Mediterranean Dinner"]
+          "highlights": [
+            "Nice Old Town Walking Tour",
+            "Mediterranean Welcome Dinner",
+            "Promenade des Anglais"
+          ]
         },
         {
           "day": 2,
-          "title": "Provence Exploration",
-          "description": "Visit the picturesque villages of Provence and lavender fields",
-          "highlights": ["Lavender Fields", "Village Markets", "Wine Tasting"]
+          "title": "Nice & Monaco",
+          "description": "Explore Nice's markets and visit glamorous Monaco",
+          "highlights": [
+            "Cours Saleya Market",
+            "Monaco Palace",
+            "Monte Carlo Casino",
+            "Yacht Harbor"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Saint-Paul-de-Vence & Antibes",
+          "description": "Visit medieval villages and coastal towns",
+          "highlights": [
+            "Saint-Paul-de-Vence Art Galleries",
+            "Antibes Old Town",
+            "Picasso Museum"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Cannes & Èze",
+          "description": "Discover Cannes' glamour and Èze's hilltop charm",
+          "highlights": [
+            "Cannes Film Festival Palace",
+            "La Croisette",
+            "Èze Village",
+            "Perfume Factory"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Aix-en-Provence",
+          "description": "Experience the cultural capital of Provence",
+          "highlights": [
+            "Cours Mirabeau",
+            "Cézanne's Studio",
+            "Local Wine Tasting"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Provence Lavender Fields",
+          "description": "Visit the stunning lavender fields and historic villages",
+          "highlights": [
+            "Valensole Plateau",
+            "Lavender Museum",
+            "Provençal Village Tour"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Saint-Tropez",
+          "description": "Explore the famous coastal resort and nearby villages",
+          "highlights": [
+            "Port Grimaud",
+            "Saint-Tropez Market",
+            "Coastal Boat Tour"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Departure Day",
+          "description": "Final morning in Nice with optional activities",
+          "highlights": ["Matisse Museum", "Final Shopping", "Farewell Lunch"]
         }
       ],
       "created_at": "2024-04-22T15:00:00Z",
@@ -154,22 +583,99 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "London Landmarks",
-          "description": "Explore iconic London sites and enjoy afternoon tea",
+          "title": "London Arrival",
+          "description": "Welcome to London with afternoon tea and city orientation",
           "highlights": [
-            "Tower of London",
-            "Westminster Abbey",
-            "Afternoon Tea"
+            "Westminster Walking Tour",
+            "Luxury Afternoon Tea",
+            "London Eye Sunset"
           ]
         },
         {
           "day": 2,
-          "title": "Scottish Highlands",
-          "description": "Journey through the majestic Scottish Highlands",
+          "title": "Historic London",
+          "description": "Explore London's most iconic historic sites",
+          "highlights": [
+            "Tower of London",
+            "Crown Jewels",
+            "Tower Bridge",
+            "Thames River Cruise"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Royal London",
+          "description": "Experience London's royal heritage",
+          "highlights": [
+            "Buckingham Palace",
+            "Changing of the Guard",
+            "Westminster Abbey"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Bath & Stonehenge",
+          "description": "Journey to the Roman city of Bath and prehistoric Stonehenge",
+          "highlights": [
+            "Roman Baths",
+            "Stonehenge Tour",
+            "Bath Architecture Walk"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Cotswolds Villages",
+          "description": "Discover the charm of the Cotswolds countryside",
+          "highlights": [
+            "Bourton-on-the-Water",
+            "Bibury",
+            "Traditional Pub Lunch"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "York Exploration",
+          "description": "Travel to historic York and explore its medieval streets",
+          "highlights": ["York Minster", "The Shambles", "City Walls Walk"]
+        },
+        {
+          "day": 7,
+          "title": "Edinburgh Arrival",
+          "description": "Journey to Scotland's capital and evening ghost tour",
           "highlights": [
             "Edinburgh Castle",
-            "Highland Landscapes",
-            "Whisky Tasting"
+            "Royal Mile",
+            "Ghost & Underground Vaults Tour"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Scottish Highlands",
+          "description": "Experience the majesty of the Scottish Highlands",
+          "highlights": [
+            "Loch Ness",
+            "Urquhart Castle",
+            "Highland Village Visit"
+          ]
+        },
+        {
+          "day": 9,
+          "title": "St Andrews & Whisky",
+          "description": "Visit St Andrews and enjoy whisky tasting",
+          "highlights": [
+            "St Andrews Golf Course",
+            "Cathedral Ruins",
+            "Whisky Distillery Tour"
+          ]
+        },
+        {
+          "day": 10,
+          "title": "Edinburgh & Departure",
+          "description": "Final morning in Edinburgh with optional activities",
+          "highlights": [
+            "Holyrood Palace",
+            "Arthur's Seat View",
+            "Farewell Scottish Dinner"
           ]
         }
       ],
@@ -188,13 +694,74 @@
           "day": 1,
           "title": "Oslo Discovery",
           "description": "Explore Oslo's culture and Viking history",
-          "highlights": ["Viking Ship Museum", "Vigeland Park"]
+          "highlights": [
+            "Viking Ship Museum",
+            "Vigeland Park",
+            "Opera House",
+            "Welcome Dinner"
+          ]
         },
         {
           "day": 2,
-          "title": "Fjord Cruise",
-          "description": "Cruise through dramatic fjords and visit waterfront villages",
-          "highlights": ["Geirangerfjord", "Flåm Railway"]
+          "title": "Bergen & Bryggen",
+          "description": "Travel to Bergen and explore the historic Hanseatic wharf",
+          "highlights": [
+            "Bergen Railway Journey",
+            "Bryggen Wharf",
+            "Fish Market",
+            "Mount Fløyen"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Fjord Cruise Begin",
+          "description": "Start your fjord adventure with a cruise through Nærøyfjord",
+          "highlights": [
+            "UNESCO Nærøyfjord",
+            "Aurland Lookout",
+            "Village of Flåm"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Flåm Railway & Hiking",
+          "description": "Experience one of the world's most scenic train journeys",
+          "highlights": [
+            "Flåm Railway",
+            "Waterfalls",
+            "Mountain Hiking",
+            "Traditional Farm Visit"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Geirangerfjord",
+          "description": "Explore Norway's most famous fjord",
+          "highlights": [
+            "Seven Sisters Waterfall",
+            "Eagle Road Viewpoint",
+            "Kayaking Option"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Ålesund Art Nouveau",
+          "description": "Discover the art nouveau architecture of Ålesund",
+          "highlights": [
+            "Mount Aksla Viewpoint",
+            "Art Nouveau Centre",
+            "Coastal Culture"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Return to Oslo",
+          "description": "Scenic return to Oslo with farewell dinner",
+          "highlights": [
+            "Coastal Flight",
+            "Holmenkollen Ski Jump",
+            "Farewell Seafood Feast"
+          ]
         }
       ],
       "created_at": "2024-04-22T17:00:00Z",
@@ -210,15 +777,73 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Barcelona Beginnings",
-          "description": "Discover Gaudi's architecture and Catalan culture",
-          "highlights": ["Sagrada Familia", "Las Ramblas", "Tapas Tour"]
+          "title": "Barcelona Welcome",
+          "description": "Arrive in Barcelona and begin exploring the Catalan capital",
+          "highlights": [
+            "Las Ramblas Walk",
+            "Gothic Quarter",
+            "Welcome Tapas Tour"
+          ]
         },
         {
           "day": 2,
-          "title": "Andalusian Adventure",
-          "description": "Experience the magic of southern Spain",
-          "highlights": ["Alhambra Palace", "Flamenco Show"]
+          "title": "Gaudí's Barcelona",
+          "description": "Discover the architectural wonders of Antoni Gaudí",
+          "highlights": ["Sagrada Familia", "Park Güell", "Casa Batlló"]
+        },
+        {
+          "day": 3,
+          "title": "Barcelona Culture",
+          "description": "Experience Barcelona's art and culinary scene",
+          "highlights": ["Picasso Museum", "Cooking Class", "Barceloneta Beach"]
+        },
+        {
+          "day": 4,
+          "title": "Madrid Arrival",
+          "description": "Travel to Madrid and explore the capital",
+          "highlights": ["Puerta del Sol", "Plaza Mayor", "Royal Palace"]
+        },
+        {
+          "day": 5,
+          "title": "Madrid Art & History",
+          "description": "Visit world-class museums and historic sites",
+          "highlights": ["Prado Museum", "Retiro Park", "Temple of Debod"]
+        },
+        {
+          "day": 6,
+          "title": "Toledo Day Trip",
+          "description": "Explore the historic city of Toledo",
+          "highlights": [
+            "Toledo Cathedral",
+            "Jewish Quarter",
+            "El Greco Museum"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Seville Introduction",
+          "description": "Travel to Seville and discover Andalusian culture",
+          "highlights": ["Alcázar Palace", "Barrio Santa Cruz", "Flamenco Show"]
+        },
+        {
+          "day": 8,
+          "title": "Granada & Alhambra",
+          "description": "Visit the stunning Alhambra palace complex",
+          "highlights": [
+            "Alhambra Tour",
+            "Generalife Gardens",
+            "Albaicín Quarter"
+          ]
+        },
+        {
+          "day": 9,
+          "title": "Seville Farewell",
+          "description": "Final day exploring Seville before departure",
+          "highlights": [
+            "Cathedral & Giralda",
+            "Plaza de España",
+            "Farewell Dinner"
+          ]
         }
       ],
       "created_at": "2024-04-22T18:00:00Z",
@@ -234,15 +859,75 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Banff National Park",
-          "description": "Explore Canada's oldest national park",
-          "highlights": ["Lake Louise", "Banff Gondola", "Hot Springs"]
+          "title": "Calgary to Banff",
+          "description": "Travel from Calgary through the foothills to Banff National Park",
+          "highlights": [
+            "Calgary Tower View",
+            "Banff Welcome",
+            "Evening Wildlife Tour"
+          ]
         },
         {
           "day": 2,
-          "title": "Jasper Journey",
-          "description": "Travel the Icefields Parkway to Jasper National Park",
-          "highlights": ["Columbia Icefield", "Athabasca Falls"]
+          "title": "Banff National Park",
+          "description": "Explore Canada's oldest national park",
+          "highlights": [
+            "Sulphur Mountain Gondola",
+            "Banff Hot Springs",
+            "Lake Minnewanka Cruise"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Lake Louise",
+          "description": "Visit the iconic Lake Louise and surrounding area",
+          "highlights": [
+            "Lake Louise Canoeing",
+            "Plain of Six Glaciers Tea House Hike",
+            "Moraine Lake"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Icefields Parkway",
+          "description": "Journey along one of the world's most scenic highways",
+          "highlights": ["Bow Lake", "Columbia Icefield", "Ice Explorer Tour"]
+        },
+        {
+          "day": 5,
+          "title": "Jasper National Park",
+          "description": "Discover the natural wonders of Jasper",
+          "highlights": [
+            "Maligne Canyon",
+            "Spirit Island Boat Tour",
+            "Jasper SkyTram"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Yoho National Park",
+          "description": "Explore the hidden gems of Yoho National Park",
+          "highlights": ["Emerald Lake", "Natural Bridge", "Burgess Shale"]
+        },
+        {
+          "day": 7,
+          "title": "Kananaskis Country",
+          "description": "Adventure in the pristine Kananaskis wilderness",
+          "highlights": [
+            "Hiking Trails",
+            "Mountain Biking",
+            "Alpine Helicopter Tour"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Return to Calgary",
+          "description": "Final day in the mountains before departure",
+          "highlights": [
+            "Heritage Park",
+            "Final Mountain Views",
+            "Farewell Dinner"
+          ]
         }
       ],
       "created_at": "2024-04-22T19:00:00Z",
@@ -258,15 +943,97 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Sydney Discovery",
-          "description": "Explore iconic Sydney landmarks and enjoy a harbor cruise",
-          "highlights": ["Sydney Opera House", "Harbour Bridge", "Bondi Beach"]
+          "title": "Sydney Arrival",
+          "description": "Welcome to Sydney and harbor cruise introduction",
+          "highlights": [
+            "Sydney Opera House",
+            "Harbor Bridge",
+            "Welcome Dinner Cruise"
+          ]
         },
         {
           "day": 2,
-          "title": "Great Barrier Reef Adventure",
-          "description": "Snorkel or dive at the world's largest coral reef system",
-          "highlights": ["Marine Life Viewing", "Coral Gardens", "Island Visit"]
+          "title": "Sydney Exploration",
+          "description": "Discover Sydney's iconic beaches and culture",
+          "highlights": [
+            "Bondi Beach",
+            "Coastal Walk",
+            "The Rocks Historic District"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Blue Mountains",
+          "description": "Day trip to the stunning Blue Mountains",
+          "highlights": ["Three Sisters", "Scenic World", "Aboriginal Culture"]
+        },
+        {
+          "day": 4,
+          "title": "Cairns & Port Douglas",
+          "description": "Travel to tropical North Queensland",
+          "highlights": [
+            "Rainforest Aerial Tram",
+            "Port Douglas Beach",
+            "Night Markets"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Great Barrier Reef",
+          "description": "Explore the world's largest coral reef system",
+          "highlights": ["Snorkeling", "Marine Life", "Semi-Submersible Tour"]
+        },
+        {
+          "day": 6,
+          "title": "Daintree Rainforest",
+          "description": "Adventure in the world's oldest rainforest",
+          "highlights": ["Cape Tribulation", "River Cruise", "Rainforest Walk"]
+        },
+        {
+          "day": 7,
+          "title": "Uluru Arrival",
+          "description": "Journey to the Red Centre and Uluru",
+          "highlights": [
+            "Sunset Viewing",
+            "Bush Tucker Experience",
+            "Star Gazing"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Uluru & Kata Tjuta",
+          "description": "Explore the sacred sites of the Outback",
+          "highlights": ["Sunrise Tour", "Kata Tjuta Walk", "Field of Light"]
+        },
+        {
+          "day": 9,
+          "title": "Melbourne Culture",
+          "description": "Discover Melbourne's famous laneways and culture",
+          "highlights": [
+            "Street Art Tour",
+            "Coffee Culture",
+            "Queen Victoria Market"
+          ]
+        },
+        {
+          "day": 10,
+          "title": "Great Ocean Road",
+          "description": "Drive along the spectacular Great Ocean Road",
+          "highlights": [
+            "Twelve Apostles",
+            "Koala Spotting",
+            "Coastal Villages"
+          ]
+        },
+        {
+          "day": 11,
+          "title": "Melbourne Farewell",
+          "description": "Final day exploring Melbourne",
+          "highlights": [
+            "Royal Botanic Gardens",
+            "South Bank",
+            "Farewell Dinner"
+          ]
         }
       ],
       "created_at": "2024-04-23T10:00:00Z",
@@ -282,15 +1049,55 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Balboa Park & Zoo",
-          "description": "Visit the world-famous San Diego Zoo and explore Balboa Park's museums",
-          "highlights": ["San Diego Zoo", "Botanical Gardens", "Museums"]
+          "title": "San Diego Welcome",
+          "description": "Arrive in San Diego and explore Balboa Park",
+          "highlights": [
+            "Balboa Park Gardens",
+            "Spanish Village Art Center",
+            "Welcome Dinner in Gaslamp Quarter"
+          ]
         },
         {
           "day": 2,
-          "title": "Coastal Adventures",
-          "description": "Experience La Jolla's coastal beauty and maritime history",
-          "highlights": ["La Jolla Cove", "USS Midway Museum", "Sunset Sailing"]
+          "title": "Zoo & Museums",
+          "description": "Visit the world-famous San Diego Zoo and cultural institutions",
+          "highlights": [
+            "San Diego Zoo",
+            "Natural History Museum",
+            "Museum of Art"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "La Jolla Day",
+          "description": "Explore the stunning La Jolla coastline",
+          "highlights": ["La Jolla Cove", "Torrey Pines Hike", "Seal Watching"]
+        },
+        {
+          "day": 4,
+          "title": "Maritime History",
+          "description": "Discover San Diego's rich maritime heritage",
+          "highlights": [
+            "USS Midway Museum",
+            "Harbor Cruise",
+            "Seaport Village"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Beach & Island Adventure",
+          "description": "Experience Coronado Island and beach culture",
+          "highlights": [
+            "Coronado Beach",
+            "Hotel del Coronado",
+            "Sunset Sailing"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Final Day Explorations",
+          "description": "Last day to enjoy San Diego's highlights",
+          "highlights": ["Old Town", "Liberty Public Market", "Farewell Dinner"]
         }
       ],
       "created_at": "2024-04-23T11:00:00Z",
