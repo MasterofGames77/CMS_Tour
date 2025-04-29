@@ -237,49 +237,92 @@ Which city interests you most: Rome, Florence, Venice, or Milan?`;
 • France (Nice, Provence, Monaco, Marseille)
 • United Kingdom (London, Edinburgh, Glasgow)
 • Norway (Oslo, Bergen, Trondheim)
-• Spain 🇪🇸 (Barcelona, Madrid, Valencia)
+• Spain (Barcelona, Madrid, Valencia)
 
 Which country or city interests you most?`;
-      } else if (lowerMessage.includes("asia")) {
+      } else if (
+        lowerMessage.includes("asia") ||
+        lowerMessage.includes("asian")
+      ) {
         response = `🗾 Our Asian destinations:
 • Japan (Tokyo, Kyoto, Hakone, Osaka)
 • China (Beijing, Shanghai, Xi'an)
+• Thailand (Bangkok, Chiang Mai, Phuket)
+• Vietnam (Hanoi, Ho Chi Minh City, Ha Long Bay)
+
+Which country or city interests you most?`;
+      } else if (
+        lowerMessage.includes("south america") ||
+        lowerMessage.includes("south american")
+      ) {
+        response = `🌎 Our South American destinations:
+• Peru (Cusco, Sacred Valley, Machu Picchu)
+• Brazil (Rio de Janeiro, Amazon Rainforest)
+• Argentina (Buenos Aires, Patagonia)
+• Chile (Santiago, Atacama Desert)
+
+Which country or city interests you most?`;
+      } else if (
+        lowerMessage.includes("north america") ||
+        lowerMessage.includes("north american")
+      ) {
+        response = `🌎 Our North American destinations:
+• Canada (Banff, Jasper, Lake Louise, Montreal)
+• United States (San Diego, New York City, Chicago)
+• Mexico (Mexico City, Cancun, Chichen Itza)
+
+Which country or city interests you most?`;
+      } else if (
+        lowerMessage.includes("africa") ||
+        lowerMessage.includes("african")
+      ) {
+        response = `🦁 Our African destinations:
+• Tanzania (Serengeti, Ngorongoro Crater)
+• South Africa (Cape Town, Kruger National Park)
+• Kenya (Nairobi, Maasai Mara)
+• Egypt (Cairo, Luxor, Aswan)
+
+Which country or city interests you most?`;
+      } else if (
+        lowerMessage.includes("australia") ||
+        lowerMessage.includes("oceania") ||
+        lowerMessage.includes("pacific")
+      ) {
+        response = `🦘 Our Oceania destinations:
+• Australia (Sydney, Great Barrier Reef, Uluru)
+• New Zealand (Auckland, Queenstown, Rotorua)
+• Fiji (Nadi, Suva, Coral Coast)
+• French Polynesia (Tahiti, Bora Bora)
 
 Which country or city interests you most?`;
       } else if (
         lowerMessage.includes("america") ||
         lowerMessage.includes("americas")
       ) {
-        response = `🌎 Our American destinations:
-• Peru (Cusco, Sacred Valley, Machu Picchu)
+        response = `🌎 Our American destinations are divided into regions:
+
+North America:
 • Canada (Banff, Jasper, Lake Louise, Montreal)
 • United States (San Diego, New York City, Chicago)
+• Mexico (Mexico City, Cancun, Chichen Itza)
 
-Which country or city interests you most?`;
-      } else if (lowerMessage.includes("africa")) {
-        response = `🦁 Our African destinations:
-• Tanzania
-• South Africa
+South America:
+• Peru (Cusco, Sacred Valley, Machu Picchu)
+• Brazil (Rio de Janeiro, Amazon Rainforest)
+• Argentina (Buenos Aires, Patagonia)
+• Chile (Santiago, Atacama Desert)
 
-Which destination interests you most?`;
-      } else if (
-        lowerMessage.includes("australia") ||
-        lowerMessage.includes("oceania")
-      ) {
-        response = `🦘 Our Oceania destinations:
-• Australia
-• New Zealand
-
-Which destination interests you most?`;
+Which region or country interests you most?`;
       } else if (
         lowerMessage.includes("destination") ||
         lowerMessage.includes("where")
       ) {
         response = `🌍 We offer tours in these regions:
-• Europe
-• Asia 🌏
-• Americas 🌎
-• Africa 🌍
+• Europe ✈️
+• Asia 🗾
+• North America 🌎
+• South America 🌎
+• Africa 🦁
 • Oceania 🦘
 
 Which region would you like to explore?`;
